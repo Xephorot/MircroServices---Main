@@ -1,0 +1,30 @@
+version: '3'
+services:
+  main-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: main_service
+    environment:
+      - MONGO_URL=mongodb://nest-main:27017/nest_main #Cambiar aqui en caso de que sea local
+    ports:
+      - "8001:8001"
+    networks:
+      - backend
+
+  main-listen:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: main_listen
+    environment:
+      - MONGO_URL=mongodb://nest-main:27017/nest_main #Cambiar aqui en caso de que sea local
+    depends_on:
+      - main-service
+    networks:
+      - backend
+    command: npm run listen
+
+networks:
+  backend:
+    external: true
