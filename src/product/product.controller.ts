@@ -35,7 +35,9 @@ async like(@Param('id') id: number) {
     // Luego realiza la solicitud HTTP
     try {
         const response = await firstValueFrom(
-            this.httpService.post(`http://localhost:8000/api/products/${id}/like`, {})
+            //Cambiar a http://localhost:8000/api/products/${id}/like si la base de datos es local
+            //Si no a http://admin_service:8000/api/products/${id}/like
+            this.httpService.post(`http://admin_service:8000/api/products/${id}/like`, {})
         );
         console.log('HTTP response:', response.data);
     } catch (error) {
