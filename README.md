@@ -33,8 +33,8 @@ Este comando crea un contenedor llamado `nest-main` que:
 
 ### 3. Crear la Base de Datos y la Colección `products`
 
-Una vez que el contenedor de MongoDB esté corriendo, puedes conectarte al contenedor para crear la base de datos y la colección de forma manual por el mongodb Compass: /n
-Crear una base de datos llamada `nest_main` y dentro de esta crea una coleccion llamada `products`.
+Una vez que el contenedor de MongoDB esté corriendo, puedes conectarte al contenedor para crear la base de datos y la colección de forma manual por el mongodb Compass:
+- Crear una base de datos llamada `nest_main` y dentro de esta crea una coleccion llamada `products`.
 
 ### 4. Crear la Red de Docker
 
